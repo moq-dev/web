@@ -1,0 +1,10 @@
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, sans-serif;
+    background-color: #242424;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+#root {
+    padding: 2rem;
+}
