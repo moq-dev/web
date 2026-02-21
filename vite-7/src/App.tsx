@@ -1,30 +1,40 @@
-import { useState } from 'react';
-import HangWatch from './components/HangWatch';
-import HangPublish from './components/HangPublish';
-import './App.css';
+import "./App.css";
 
-type Mode = 'watch' | 'publish';
-
-const RELAY_URL = import.meta.env.VITE_RELAY_URL;
-const BROADCAST_PATH = import.meta.env.VITE_BROADCAST_PATH;
+import "@moq/watch/element";
+import "@moq/watch/support/element";
+import "@moq/watch/ui";
+import "@moq/publish/element";
+import "@moq/publish/support/element";
+import "@moq/publish/ui";
 
 function App() {
-    const [mode, setMode] = useState<Mode>('watch');
+	return (
+		<>
+			<moq-watch-ui>
+				<moq-watch
+					url="https://cdn.moq.dev/demo?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb290IjoiZGVtbyIsImdldCI6WyIiXSwiZXhwIjpudWxsLCJpYXQiOm51bGx9.6EoN-Y1Ouj35_qV5FokcdcdderrE2navNbYQjJyR2Ac"
+					path="bbb"
+					muted
+				>
+					<canvas />
+				</moq-watch>
+			</moq-watch-ui>
 
-    const toggleMode = () => setMode(mode === 'watch' ? 'publish' : 'watch');
+			<moq-watch-support show="always" />
 
-    return (
-        <div id="app">
-            <h1>@moq/hang Integration Example</h1>
-            
-            <button onClick={toggleMode}>
-                Switch to {mode === 'watch' ? 'Publish' : 'Watch'}
-            </button>
+			<moq-publish-ui>
+				<moq-publish
+					url="https://cdn.moq.dev/anon"
+					path="my-broadcast"
+					source="camera"
+				>
+					<video muted autoPlay />
+				</moq-publish>
+			</moq-publish-ui>
 
-            {mode === 'watch' && <HangWatch url={RELAY_URL} path={BROADCAST_PATH} />}
-            {mode === 'publish' && <HangPublish url={RELAY_URL} path={BROADCAST_PATH} />}
-        </div>
-    );
+			<moq-publish-support show="always" />
+		</>
+	);
 }
 
 export default App;

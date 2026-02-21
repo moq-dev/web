@@ -10,8 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@moq/hang": "^0.1.2",
-    "@moq/hang-ui": "^0.1.2",
+    "@moq/publish": "^0.1.1",
+    "@moq/watch": "^0.1.1",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
