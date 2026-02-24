@@ -1,6 +1,6 @@
 # MoQ Web Components + React
 
-React application demonstrating Media over QUIC (MoQ) web components for real-time media streaming. Uses `@moq/watch` and `@moq/publish` packages with React 18 and Vite 6.
+React application demonstrating Media over QUIC (MoQ) web components for real-time media streaming. Uses `@moq/watch` and `@moq/publish` packages with React 19 and Vite 7.
 
 ## Features
 
@@ -21,6 +21,14 @@ npm run dev
 ```
 
 The app opens at `http://localhost:5173`.
+
+## Environment Variables
+
+Create a `.env.local` file to override defaults:
+
+```env
+VITE_RELAY_URL=http://localhost:4443/anon
+```
 
 ## Build
 
