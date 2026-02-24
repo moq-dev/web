@@ -22,6 +22,14 @@ npm run dev
 
 The app opens at `http://localhost:5173`.
 
+## Environment Variables
+
+Create a `.env.local` file to override defaults:
+
+```env
+VITE_RELAY_URL=http://localhost:4443/anon
+```
+
 ## Build
 
 ```bash

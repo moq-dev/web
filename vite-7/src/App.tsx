@@ -7,15 +7,13 @@ import "@moq/publish/element";
 import "@moq/publish/support/element";
 import "@moq/publish/ui";
 
+const RELAY_URL = import.meta.env.VITE_RELAY_URL || "http://localhost:4443/anon";
+
 function App() {
 	return (
 		<>
 			<moq-watch-ui>
-				<moq-watch
-					url="https://cdn.moq.dev/demo?jwt=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJyb290IjoiZGVtbyIsImdldCI6WyIiXSwiZXhwIjpudWxsLCJpYXQiOm51bGx9.6EoN-Y1Ouj35_qV5FokcdcdderrE2navNbYQjJyR2Ac"
-					path="bbb"
-					muted
-				>
+				<moq-watch url={RELAY_URL} path="bbb" muted>
 					<canvas />
 				</moq-watch>
 			</moq-watch-ui>
@@ -23,11 +21,7 @@ function App() {
 			<moq-watch-support show="always" />
 
 			<moq-publish-ui>
-				<moq-publish
-					url="https://cdn.moq.dev/anon"
-					path="my-broadcast"
-					source="camera"
-				>
+				<moq-publish url={RELAY_URL} path="my-broadcast" source="camera">
 					<video muted autoPlay />
 				</moq-publish>
 			</moq-publish-ui>
