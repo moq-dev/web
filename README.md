@@ -15,8 +15,9 @@ npm run dev
 
 ## Frameworks
 
-| Framework                                     | Supported |
-|-----------------------------------------------|-----------|
-| [Vite 5](./vite-5)                            | ✅         |
-| [Vite 6](./vite-6)                            | ✅         |
+| Framework                                       | Supported  |
+|-------------------------------------------------|------------|
+| [Vite 5](./vite-5)                              | ✅         |
+| [Vite 6](./vite-6)                              | ✅         |
+| [Vite 7](./vite-7)                              | ✅         |
 | [Astro 5](https://github.com/kixelated/moq.dev) | ✅         |

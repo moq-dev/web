@@ -1,18 +1,17 @@
 // Provides TypeScript support for any web components that add themselves to HTMLElementTagNameMap.
 // Custom elements must contain a hyphen per the web component spec.
 
-type CustomElementProps<T> = Partial<T & DOMAttributes<T> & { children: unknown }>;
+import "react";
 
 type CustomElements = {
-	[K in keyof HTMLElementTagNameMap as K extends `${string}-${string}` ? K : never]: CustomElementProps<
+	[K in keyof HTMLElementTagNameMap as K extends `${string}-${string}` ? K : never]: React.HTMLAttributes<
 		HTMLElementTagNameMap[K]
-	>;
+	> & { children?: React.ReactNode; [attr: string]: unknown };
 };
 
-declare global {
+declare module "react" {
 	namespace JSX {
+		// eslint-disable-next-line @typescript-eslint/no-empty-object-type
 		interface IntrinsicElements extends CustomElements {}
 	}
 }
-
-export {};

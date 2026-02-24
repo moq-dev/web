@@ -1,50 +1,50 @@
-# React + TypeScript + Vite
+# MoQ Web Components + React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+React application demonstrating Media over QUIC (MoQ) web components for real-time media streaming. Uses `@moq/watch` and `@moq/publish` packages with React 18 and Vite 6.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- **Watch**: Subscribe to real-time media streams from a MoQ relay
+- **Publish**: Publish camera/screen media to a MoQ relay
+- Custom web components with Solid.js-based UI overlays
+- Feature detection and browser support banners
 
-## Expanding the ESLint configuration
+## Prerequisites
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- Node.js 20.19.0 or >=22.12.0
 
-- Configure the top-level `parserOptions` property like this:
+## Quick Start
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+```bash
+npm install
+npm run dev
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+The app opens at `http://localhost:5173`.
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+## Build
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
+```bash
+npm run build
 ```
+
+Output is generated in the `dist/` directory.
+
+## Web Components
+
+### Watch (Subscribe)
+- **`<moq-watch>`** - Core element for subscribing to MoQ streams. Accepts `url`, `path`, `muted`, `paused`, `volume`, `jitter` attributes. Contains a `<canvas>` or `<video>` element for rendering.
+- **`<moq-watch-ui>`** - Solid.js UI overlay providing playback controls, stats panel, and buffering indicators.
+- **`<moq-watch-support>`** - Feature detection banner that displays browser compatibility warnings.
+
+### Publish
+- **`<moq-publish>`** - Core element for publishing media to MoQ streams. Accepts `url`, `path`, `source`, `muted`, `invisible` attributes. Contains a `<video>` element for preview.
+- **`<moq-publish-ui>`** - Solid.js UI overlay providing publishing controls and configuration.
+- **`<moq-publish-support>`** - Feature detection banner for publishing capabilities.
+
+## Resources
+
+- [@moq/watch](https://www.npmjs.com/package/@moq/watch) - Watch/subscribe to MoQ streams
+- [@moq/publish](https://www.npmjs.com/package/@moq/publish) - Publish to MoQ streams
+- [Vite](https://vite.dev)
+- [React](https://react.dev)
