@@ -1,6 +1,6 @@
-# MoQ Web Components + React
+# MoQ Web Components + Vue
 
-React application demonstrating Media over QUIC (MoQ) web components for real-time media streaming. Uses `@moq/watch` and `@moq/publish` packages with React 18 and Vite 5.
+Vue 3 application demonstrating Media over QUIC (MoQ) web components for real-time media streaming. Uses `@moq/watch` and `@moq/publish` packages with Vue 3 and Vite 7.
 
 ## Features
 
@@ -33,7 +33,7 @@ Output is generated in the `dist/` directory.
 ## Web Components
 
 ### Watch (Subscribe)
-- **`<moq-watch>`** - Core element for subscribing to MoQ streams. Accepts `url`, `name`, `muted`, `paused`, `volume`, `jitter` attributes. Contains a `<canvas>` or `<video>` element for rendering.
+- **`<moq-watch>`** - Core element for subscribing to MoQ streams. Accepts `url`, `path`, `muted`, `paused`, `volume`, `jitter` attributes. Contains a `<canvas>` or `<video>` element for rendering.
 - **`<moq-watch-ui>`** - Solid.js UI overlay providing playback controls, stats panel, and buffering indicators.
 - **`<moq-watch-support>`** - Feature detection banner that displays browser compatibility warnings.
 
@@ -47,4 +47,4 @@ Output is generated in the `dist/` directory.
 - [@moq/watch](https://www.npmjs.com/package/@moq/watch) - Watch/subscribe to MoQ streams
 - [@moq/publish](https://www.npmjs.com/package/@moq/publish) - Publish to MoQ streams
 - [Vite](https://vite.dev)
-- [React](https://react.dev)
+- [Vue](https://vuejs.org)

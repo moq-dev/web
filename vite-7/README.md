@@ -41,7 +41,7 @@ Output is generated in the `dist/` directory.
 ## Web Components
 
 ### Watch (Subscribe)
-- **`<moq-watch>`** - Core element for subscribing to MoQ streams. Accepts `url`, `path`, `muted`, `paused`, `volume`, `jitter` attributes. Contains a `<canvas>` or `<video>` element for rendering.
+- **`<moq-watch>`** - Core element for subscribing to MoQ streams. Accepts `url`, `name`, `muted`, `paused`, `volume`, `jitter` attributes. Contains a `<canvas>` or `<video>` element for rendering.
 - **`<moq-watch-ui>`** - Solid.js UI overlay providing playback controls, stats panel, and buffering indicators.
 - **`<moq-watch-support>`** - Feature detection banner that displays browser compatibility warnings.
 
